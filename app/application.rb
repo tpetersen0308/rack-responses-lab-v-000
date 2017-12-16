@@ -6,7 +6,7 @@ class Application
     t = Time.new
     if "#{t.hour}:#{t.min}" < "12:0"
       resp.write "Good Morning!"
-    elsif "#{t.hour}:#{t.min}" >= "12:0"
+    else
       resp.write "Good Afternoon!"
     end
 
