@@ -4,7 +4,8 @@ class Application
     resp = Rack::Response.new
 
     t = Time.new
-    if "#{t.hour}:#{t.min}" < "12:0"
+
+    if t.utc.strftime("%H%M%S%N") < Time.utc.strftime("%12%00%00%00")
       resp.write "Good Morning!"
     else
       resp.write "Good Afternoon!"
